@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="start_category_height">148dp</dimen>
+    <dimen name="category_radius">10dp</dimen>
+    <dimen name="category_margin_top_bottom">4dp</dimen>
+    <dimen name="category_margin_start_end">16dp</dimen>
+    <dimen name="category_text_size">20sp</dimen>
+    <dimen name="category_text_margin_top">12dp</dimen>
+    <dimen name="category_text_margin_start">16dp</dimen>
+    <dimen name="text_category_size">180dp</dimen>
+</resources>

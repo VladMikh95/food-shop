@@ -13,4 +13,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="StartFragmentCategories">
+        <item name="cardCornerRadius">@dimen/category_radius</item>
+        <item name="android:layout_height">@dimen/start_category_height</item>
+        <item name="android:layout_marginTop">@dimen/category_margin_top_bottom</item>
+        <item name="android:layout_marginStart">@dimen/category_margin_start_end</item>
+        <item name="android:layout_marginEnd">@dimen/category_margin_start_end</item>
+        <item name="android:layout_marginBottom">@dimen/category_margin_top_bottom</item>
+    </style>
+
+    <style name="StartCategoryText">
+        <item name="android:textSize">@dimen/category_text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">@dimen/category_text_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/category_text_margin_start</item>
+    </style>
 </resources>

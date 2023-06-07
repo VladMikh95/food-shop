@@ -2,4 +2,8 @@
     <string name="app_name">food-shop</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_bakeries">Пекарни и кондитерские</string>
+    <string name="text_fast_food">Фастфуд</string>
+    <string name="text_asian">Азиаткая кухня</string>
+    <string name="text_soap">Супы</string>
 </resources>
