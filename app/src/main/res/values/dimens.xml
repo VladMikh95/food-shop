@@ -8,4 +8,10 @@
     <dimen name="category_text_margin_top">12dp</dimen>
     <dimen name="category_text_margin_start">16dp</dimen>
     <dimen name="text_category_size">180dp</dimen>
+    <dimen name="size_user_photo">44dp</dimen>
+    <dimen name="radius_user_photo">22dp</dimen>
+    <dimen name="margin_text_toolbar">4dp</dimen>
+    <dimen name="toolbar_text_size_data">14sp</dimen>
+    <dimen name="toolbar_text_size_city">18sp</dimen>
+    <dimen name="toolbar_margin_top">5dp</dimen>
 </resources>

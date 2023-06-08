@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/startFragment"
+        android:icon="@drawable/bottom_main"
+        android:title="@string/bottom_main" />
+
+
+    <item
+        android:id="@+id/bottom_nav_item_search"
+        android:icon="@drawable/bottom_search"
+        android:title="@string/bottom_search" />
+
+    <item
+        android:id="@+id/basketFragment"
+        android:icon="@drawable/bottom_basket"
+        android:title="@string/bottom_basket" />
+
+    <item
+        android:id="@+id/bottom_nav_item_chat"
+        android:icon="@drawable/bottom_profile"
+        android:title="@string/ottom_profile" />
+
+</menu>

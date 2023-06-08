@@ -5,5 +5,10 @@
     <string name="text_bakeries">Пекарни и кондитерские</string>
     <string name="text_fast_food">Фастфуд</string>
     <string name="text_asian">Азиаткая кухня</string>
-    <string name="text_soap">Супы</string>
+    <string name="text_soup">Супы</string>
+    <string name="bottom_main">Главная</string>
+    <string name="bottom_search">Поиск</string>
+    <string name="bottom_basket">Корзина</string>
+    <string name="ottom_profile">Аккаунт</string>
+    <string name="my_profile">My profile</string>
 </resources>
