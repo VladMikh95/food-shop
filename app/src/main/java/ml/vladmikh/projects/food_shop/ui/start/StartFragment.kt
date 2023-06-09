@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.food_shop.R
 import ml.vladmikh.projects.food_shop.databinding.FragmentStartBinding
 
+@AndroidEntryPoint
 class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
