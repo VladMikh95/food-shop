@@ -34,9 +34,5 @@ class CategoryViewModel @Inject constructor(
 
         }
     }
-
-    private fun transformesRemoteDataSource(dishesRemoteDataSource: DishesRemoteDataSource) : List<Dishe> {
-        return dishesRemoteDataSource.dishes
-    }
 }
 

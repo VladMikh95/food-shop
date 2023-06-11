@@ -1,7 +1,5 @@
 package ml.vladmikh.projects.food_shop.data.network.models
 
-
-
 data class Dishe(
     val description: String,
     val id: Int,

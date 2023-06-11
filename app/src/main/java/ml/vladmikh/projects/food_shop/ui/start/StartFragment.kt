@@ -5,16 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
-import ml.vladmikh.projects.food_shop.R
 import ml.vladmikh.projects.food_shop.databinding.FragmentStartBinding
+
 
 @AndroidEntryPoint
 class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
+    private val viewModel by viewModels<StartViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,21 +25,14 @@ class StartFragment : Fragment() {
 
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
-        binding.bakeries.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_categoryFragment, null)
-        )
+        val recyclerView = binding.recyclerViewCategories
+        val adapter = CategoryAdapter()
 
-        binding.fastFood.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_categoryFragment, null)
-        )
-
-        binding.asian.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_categoryFragment, null)
-        )
-
-        binding.soup.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_categoryFragment,null)
-        )
+        recyclerView.adapter = adapter
+        viewModel.getCategoryRemoteDataSource()
+        viewModel.categoryList.observe(viewLifecycleOwner, Observer { categories ->
+            adapter.submitList(categories)
+        })
         return binding.root
     }
 

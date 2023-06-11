@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ml.vladmikh.projects.food_shop.BuildConfig
 import ml.vladmikh.projects.food_shop.data.network.ApiService
+import ml.vladmikh.projects.food_shop.data.repository.CategoriesRepository
 import ml.vladmikh.projects.food_shop.data.repository.DishesRepository
 import ml.vladmikh.projects.food_shop.utils.AppConstants
 import retrofit2.Retrofit
@@ -36,6 +37,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMainRemoteData(mainService: ApiService): DishesRepository =
-        DishesRepository(mainService)
+    fun provideDishesRepository(mainService: ApiService): DishesRepository = DishesRepository(mainService)
+
+    @Provides
+    @Singleton
+    fun providesCategoriesRepository(mainService: ApiService): CategoriesRepository = CategoriesRepository(mainService)
 }
