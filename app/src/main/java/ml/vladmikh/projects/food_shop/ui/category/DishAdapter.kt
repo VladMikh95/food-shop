@@ -10,7 +10,7 @@ import coil.load
 import ml.vladmikh.projects.food_shop.data.network.models.Dishe
 import ml.vladmikh.projects.food_shop.databinding.DishItemBinding
 
-class DishAdapter(/*private val onItemClicked: (Dishe) -> Unit*/) : ListAdapter<Dishe, DishAdapter.DishViewHolder>(DiffCallback) {
+class DishAdapter() : ListAdapter<Dishe, DishAdapter.DishViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Dishe>() {

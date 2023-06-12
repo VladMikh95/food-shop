@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import ml.vladmikh.projects.food_shop.data.network.models.CategoriesRemoteDataSource
 import ml.vladmikh.projects.food_shop.data.network.models.Category
+import ml.vladmikh.projects.food_shop.data.network.models.Dishe
 import ml.vladmikh.projects.food_shop.data.repository.CategoriesRepository
 import javax.inject.Inject
 
@@ -18,6 +19,7 @@ class StartViewModel @Inject constructor(
     ) : ViewModel() {
 
     private lateinit var categoriesRemoteDataSource: CategoriesRemoteDataSource
+
     private var _categoryList = MutableLiveData<List<Category>>()
     val categoryList: LiveData<List<Category>> get() = _categoryList
 
@@ -27,4 +29,5 @@ class StartViewModel @Inject constructor(
             _categoryList.value  = categoriesRemoteDataSource.сategories
         }
     }
+
 }

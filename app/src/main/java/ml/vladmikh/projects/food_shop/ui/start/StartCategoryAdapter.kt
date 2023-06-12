@@ -3,16 +3,15 @@ package ml.vladmikh.projects.food_shop.ui.start
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import ml.vladmikh.projects.food_shop.R
 import ml.vladmikh.projects.food_shop.data.network.models.Category
 import ml.vladmikh.projects.food_shop.databinding.CategoryItemBinding
 
-class CategoryAdapter(/*private val onItemClicked: (Category) -> Unit*/) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(DiffCallback) {
+class StartCategoryAdapter() : ListAdapter<Category, StartCategoryAdapter.CategoryViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Category>() {
@@ -34,12 +33,17 @@ class CategoryAdapter(/*private val onItemClicked: (Category) -> Unit*/) : ListA
                 false
             )
         )
-        viewHolder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_startFragment_to_categoryFragment))
+
         return viewHolder
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.bind(getItem(position))
+
+        holder.itemView.setOnClickListener {
+            val action = StartFragmentDirections.actionStartFragmentToCategoryFragment(getItem(position).name)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     class CategoryViewHolder(private var binding: CategoryItemBinding): RecyclerView.ViewHolder(binding.root) {

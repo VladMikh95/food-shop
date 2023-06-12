@@ -26,7 +26,7 @@ class StartFragment : Fragment() {
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
         val recyclerView = binding.recyclerViewCategories
-        val adapter = CategoryAdapter()
+        val adapter = StartCategoryAdapter()
 
         recyclerView.adapter = adapter
         viewModel.getCategoryRemoteDataSource()

@@ -18,7 +18,11 @@
         android:id="@+id/categoryFragment"
         android:name="ml.vladmikh.projects.food_shop.ui.category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/basketFragment"
         android:name="ml.vladmikh.projects.food_shop.ui.basket.BasketFragment"
