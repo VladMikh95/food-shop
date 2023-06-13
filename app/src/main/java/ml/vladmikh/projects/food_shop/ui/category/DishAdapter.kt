@@ -3,12 +3,14 @@ package ml.vladmikh.projects.food_shop.ui.category
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import ml.vladmikh.projects.food_shop.data.network.models.Dishe
 import ml.vladmikh.projects.food_shop.databinding.DishItemBinding
+
 
 class DishAdapter() : ListAdapter<Dishe, DishAdapter.DishViewHolder>(DiffCallback) {
 
@@ -32,14 +34,15 @@ class DishAdapter() : ListAdapter<Dishe, DishAdapter.DishViewHolder>(DiffCallbac
                 false
             )
         )
-        viewHolder.itemView.setOnClickListener {
-            val position = viewHolder.adapterPosition
-            //onItemClicked(getItem(position))
-        }
         return viewHolder
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
+
+        holder.itemView.setOnClickListener {
+            val action = CategoryFragmentDirections.actionCategoryFragmentToDishDialogFragment(getItem(position))
+            holder.itemView.findNavController().navigate(action)
+        }
         holder.bind(getItem(position))
     }
 
@@ -48,9 +51,7 @@ class DishAdapter() : ListAdapter<Dishe, DishAdapter.DishViewHolder>(DiffCallbac
         fun bind(dish: Dishe) {
 
             binding.textViewDish.text = dish.name
-            if (dish.image_url != null) {
-                binding.imageViewDish.load(dish.image_url.toUri().buildUpon().scheme("https").build())
-            }
+            binding.imageViewDish.load(dish.image_url.toUri().buildUpon().scheme("https").build())
         }
     }
 }

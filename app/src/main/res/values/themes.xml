@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
     </style>
 
     <style name="StartFragmentCategories">
@@ -29,5 +30,10 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_marginTop">@dimen/category_text_margin_top</item>
         <item name="android:layout_marginStart">@dimen/category_text_margin_start</item>
+    </style>
+
+    <style name="AppTheme.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:layout_width">343dp</item>
+        <item name="dialogCornerRadius">15dp</item>
     </style>
 </resources>

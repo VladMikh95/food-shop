@@ -12,5 +12,5 @@
     <color name="category_asian">#FFD8F5F3</color>
     <color name="category_soap">#FFEFF5CF</color>
     <color name="dish_item_cardview">#FFF8F7F5</color>
-    <color name="selectedItemTag">#FF3364E0</color>
+    <color name="blue">#FF3364E0</color>
 </resources>

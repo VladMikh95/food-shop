@@ -11,7 +11,7 @@ import coil.load
 import ml.vladmikh.projects.food_shop.data.network.models.Category
 import ml.vladmikh.projects.food_shop.databinding.CategoryItemBinding
 
-class StartCategoryAdapter() : ListAdapter<Category, StartCategoryAdapter.CategoryViewHolder>(DiffCallback) {
+class StartCategoryAdapter : ListAdapter<Category, StartCategoryAdapter.CategoryViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Category>() {
@@ -51,9 +51,8 @@ class StartCategoryAdapter() : ListAdapter<Category, StartCategoryAdapter.Catego
         fun bind(category: Category) {
 
             binding.textViewCategory.text = category.name
-            if (category.image_url != null) {
-                binding.imageViewCategory.load(category.image_url.toUri().buildUpon().scheme("https").build())
-            }
+            binding.imageViewCategory.load(category.image_url.toUri().buildUpon().scheme("https").build())
+
         }
     }
 }
