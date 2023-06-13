@@ -8,16 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import coil.load
+import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.food_shop.R
+import ml.vladmikh.projects.food_shop.data.network.models.Dishe
 import ml.vladmikh.projects.food_shop.databinding.FragmentDishDialogBinding
+import ml.vladmikh.projects.food_shop.ui.start.StartViewModel
 
-
+@AndroidEntryPoint
 class DishDialogFragment : DialogFragment() {
 
     private val args: DishDialogFragmentArgs by navArgs()
+    lateinit var dishParcel: Dishe
     private lateinit var binding: FragmentDishDialogBinding
+
+    private val viewModel by viewModels<DishDialogViewModel>()
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +33,7 @@ class DishDialogFragment : DialogFragment() {
 
         binding = FragmentDishDialogBinding.inflate(inflater)
 
-        val dishParcel = args.dish
+        dishParcel = args.dish
         binding.textViewTitle.text = dishParcel.name
         binding.textViewPrice.text = dishParcel.price.toString() + Html.fromHtml(" &#x20bd")
         binding.textViewWeight.text = dishParcel.weight.toString() + "г"
@@ -38,6 +46,11 @@ class DishDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.imageButtonClose.setOnClickListener { dismiss() }
+
+        binding.buttonAddToBasket.setOnClickListener(){
+            viewModel.addNewItem(dishParcel, 1)
+            dismiss()
+        }
 
     }
 

@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="232dp"
             android:background="@drawable/dialog_image_background"
+            android:layout_gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -23,6 +24,7 @@
             android:id="@+id/imageButtonClose"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:background="@drawable/dialog_imagebutton"
             android:src="@drawable/dialog_button_close"
             android:layout_marginTop="8dp"
@@ -35,6 +37,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:paddingTop="16dp"
+            android:layout_gravity="center"
             android:background="@drawable/dialog_imagebutton"
             android:src="@drawable/dialog_button_favorities"
             android:layout_marginTop="8dp"
@@ -48,7 +51,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="16sp"
-            android:text="text"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/imageViewDish"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -58,7 +60,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="text"
             android:textSize="14sp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/textViewTitle"
@@ -70,7 +71,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
-            android:text="text"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/textViewTitle"
             app:layout_constraintStart_toEndOf="@id/textViewPrice"/>
@@ -80,13 +80,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="text"
             android:textSize="14sp"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/textViewPrice"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAddToBasket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -94,7 +94,7 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             android:background="@drawable/dialog_add_to_basket"
-            android:text="Добавить в корзину"
+            android:text="@string/add_to_basket"
             app:layout_constraintTop_toBottomOf="@id/textViewDescription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

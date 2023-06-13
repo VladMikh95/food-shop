@@ -11,4 +11,5 @@
     <string name="bottom_basket">Корзина</string>
     <string name="ottom_profile">Аккаунт</string>
     <string name="my_profile">My profile</string>
+    <string name="add_to_basket">Добавить в корзину</string>
 </resources>
