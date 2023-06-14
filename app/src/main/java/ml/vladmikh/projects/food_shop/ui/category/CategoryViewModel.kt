@@ -27,14 +27,15 @@ class CategoryViewModel @Inject constructor(
 
     fun getDishes() {
         viewModelScope.launch {
-            dishesRemoteDataSource = repository.getDishesRemoteSource().body()!!
 
+            try {
+                dishesRemoteDataSource = repository.getDishesRemoteSource().body()!!
+                if (dishSelected == 0) {
+                    _dishesList.value = dishesRemoteDataSource.dishes
+                }
+            } catch (e: Exception) {
 
-
-            if (dishSelected == 0) {
-                _dishesList.value = dishesRemoteDataSource.dishes
             }
-
         }
     }
 

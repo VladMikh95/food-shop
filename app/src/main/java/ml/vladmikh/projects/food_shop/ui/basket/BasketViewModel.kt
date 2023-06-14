@@ -6,6 +6,8 @@ import kotlinx.coroutines.launch
 import ml.vladmikh.projects.food_shop.data.local.entities.DishOrder
 import ml.vladmikh.projects.food_shop.data.repository.DishOrdersRepository
 import ml.vladmikh.projects.food_shop.utils.AppConstants.INCREASING_COUNT
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -14,6 +16,9 @@ class BasketViewModel @Inject constructor (private val repository: DishOrdersRep
     val listDishOrder: LiveData<List<DishOrder>> = repository.getAllDishOrders().asLiveData()
 
     var price = 0
+
+    private var _date = getDateNow()
+    val date: String get() =_date
 
     fun changeDishOrder(basketChanging: BasketChanging) {
 
@@ -68,6 +73,12 @@ class BasketViewModel @Inject constructor (private val repository: DishOrdersRep
                 price += dishOrder.price * dishOrder.count
             }
         }
+    }
+
+    private fun getDateNow(): String {
+        val calendar =  Calendar.getInstance()
+        return  calendar.get(Calendar.DAY_OF_MONTH).toString() + " " + SimpleDateFormat("MMMM").format(calendar.time)+ " " + calendar.get(
+            Calendar.YEAR)
     }
 
 }
