@@ -9,14 +9,12 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.food_shop.R
 import ml.vladmikh.projects.food_shop.data.network.models.Dishe
 import ml.vladmikh.projects.food_shop.databinding.FragmentDishDialogBinding
-import ml.vladmikh.projects.food_shop.ui.start.StartViewModel
 
 @AndroidEntryPoint
 class DishDialogFragment : DialogFragment() {

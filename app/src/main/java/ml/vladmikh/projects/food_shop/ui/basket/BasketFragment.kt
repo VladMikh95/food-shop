@@ -1,6 +1,7 @@
 package ml.vladmikh.projects.food_shop.ui.basket
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import ml.vladmikh.projects.food_shop.R
 import ml.vladmikh.projects.food_shop.databinding.FragmentBasketBinding
-import ml.vladmikh.projects.food_shop.ui.category.CategoryViewModel
 
 @AndroidEntryPoint
 class BasketFragment : Fragment() {
@@ -24,13 +24,15 @@ class BasketFragment : Fragment() {
 
         binding = FragmentBasketBinding.inflate(inflater, container, false)
 
-        val adapter = DishOrderAdapter {
+        val adapter = DishOrderAdapter {basketChanging ->  viewModel.changeDishOrder(basketChanging)
         }
         binding.recyclerViewBasket.adapter = adapter
 
         viewModel.listDishOrder.observe(this.viewLifecycleOwner) { items ->
             items.let {
                 adapter.submitList(it)
+                viewModel.calculatePrice()
+                binding.buttonPay.text = (activity?.getString(R.string.button_pay) ?: "") + " " + viewModel.price.toString() + Html.fromHtml(" &#x20bd")
             }
         }
 

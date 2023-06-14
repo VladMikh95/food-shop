@@ -12,4 +12,5 @@
     <string name="ottom_profile">Аккаунт</string>
     <string name="my_profile">My profile</string>
     <string name="add_to_basket">Добавить в корзину</string>
+    <string name="button_pay">Оплатить </string>
 </resources>
